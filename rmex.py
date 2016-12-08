@@ -17,11 +17,23 @@ def select():
 			if i==0:
 				continue
 			if "--help"==sys.argv[i]:
-				print "Help Called"
+				print "Script coded by Abhiram Shibu, contact abhiramshibu1998@gmail.com"
+				print "Normal usage "+__file__" --fix-empty --fix-lock --sync-all"
+				print "-h or --help displays this message"
+				print "--fix-empty  deletes all empty files (Corrupt)"
+				print "--fix-lock deletes all .lock files (Git crash)"
+				print "--uninstall  unintstalla itself from system dir if exists in same name"
+				print "Licensed under Open GPL 2.0"
 				c=0
 				break
 			if "-h"==sys.argv[i]:
-				print "Help 2 called"
+				print "Script coded by Abhiram Shibu, contact abhiramshibu1998@gmail.com"
+				print "Normal usage "+__file__" --fix-empty --fix-lock --sync-all"
+				print "-h or --help displays this message"
+				print "--fix-empty  deletes all empty files (Corrupt)"
+				print "--fix-lock deletes all .lock files (Git crash)"
+				print "--uninstall  unintstalla itself from system dir if exists in same name"
+				print "Licensed under Open GPL 2.0"
 				c=0
 				break
 			if "--fix-empty"==sys.argv[i]:
