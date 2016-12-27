@@ -4,8 +4,8 @@
 2) cd fr <br>
 3) Do install procedure ( Given below )
 <center><bold><h2>Description</h2></bold></center>
-This is a program written purely in python version 2. 
-This program helps to simplify 
+This is a program written purely in python version 2. <br>
+This program helps to 
 <ul>
 <li>Simplify <code>repo sync -c --force-sync --force-broken --no-clone-bundle --no-tags</code> with just <code>fr --sync-all</code></li>
 <li>To delete all .lock files, you can just use <code>fr --fix-lock</code></li>
