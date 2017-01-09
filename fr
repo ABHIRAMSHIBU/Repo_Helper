@@ -5,6 +5,16 @@ repo_error="Repo is not initialized in this directory. Please check PWD."
 root_error="You does not appear to be root, use sudo or su to be root."
 permission_error="If any permission error occurs, please be root or contact your administrator."
 name="fr"
+def help():
+	print "Script coded by Abhiram Shibu, contact abhiramshibu1998@gmail.com"
+	print "Normal usage "+__file__+" --fix-empty --fix-lock --sync-all"
+	print "-h or --help displays this message"
+	print "--fix-empty  deletes all empty files (Corrupt)"
+	print "--fix-lock deletes all .lock files (Git crash)"
+	print "--uninstall  unintstalla itself from system dir if exists in same name"
+	print "--install installs into the system"
+	print "--sync-all to sync rom using --force-sync and all dirty commands"
+	print "Licensed under Open GPL 2.0"
 def empty_fix():
 	line='find . -type f -empty -delete'
 	os.system(line)
@@ -29,15 +39,7 @@ def select():
 			if i==0:
 				continue
 			if "--help"==sys.argv[i]:
-				print "Script coded by Abhiram Shibu, contact abhiramshibu1998@gmail.com"
-				print "Normal usage "+__file__+" --fix-empty --fix-lock --sync-all"
-				print "-h or --help displays this message"
-				print "--fix-empty  deletes all empty files (Corrupt)"
-				print "--fix-lock deletes all .lock files (Git crash)"
-				print "--uninstall  unintstalla itself from system dir if exists in same name"
-				print "--install installs into the system"
-				print "--sync-all to sync rom using --force-sync and all dirty commands"
-				print "Licensed under Open GPL 2.0"
+				help()
 				c=0
 				break
 #			if "-h"==sys.argv[i]:
@@ -85,15 +87,7 @@ def bootstrap():
 				if i==0:
 					continue
 				if "--help"==sys.argv[i] or "-h"==sys.argv[i]:
-					print "Script coded by Abhiram Shibu, contact abhiramshibu1998@gmail.com"
-					print "Normal usage "+__file__+" --fix-empty --fix-lock --sync-all"
-					print "-h or --help displays this message"
-					print "--fix-empty  deletes all empty files (Corrupt)"
-					print "--fix-lock deletes all .lock files (Git crash)"
-					print "--uninstall  unintstalla itself from system dir if exists in same name"
-					print "--install installs into the system"
-					print "--sync-all to sync rom using --force-sync and all dirty commands"
-					print "Licensed under Open GPL 2.0"
+					help()
 
 				if "--uninstall"==sys.argv[i]:
 					if root_check()==1 :
@@ -114,25 +108,9 @@ def bootstrap():
 			else:
 				print repo_error
 		else :
-			print "Script coded by Abhiram Shibu, contact abhiramshibu1998@gmail.com"
-			print "Normal usage "+name+" --fix-empty --fix-lock --sync-all"
-			print "-h or --help displays this message"
-			print "--fix-empty  deletes all empty files (Corrupt)"
-			print "--fix-lock deletes all .lock files (Git crash)"
-			print "--uninstall  unintstalla itself from system dir if exists in same name"
-			print "--install installs into the system"
-			print "--sync-all to sync rom using --force-sync and all dirty commands"
-			print "Licensed under Open GPL 2.0"
+			help()
 	else :
 		print root_error
-		print "Script coded by Abhiram Shibu, contact abhiramshibu1998@gmail.com"
-		print "Normal usage "+name+" --fix-empty --fix-lock --sync-all"
-		print "-h or --help displays this message"
-		print "--fix-empty  deletes all empty files (Corrupt)"
-		print "--fix-lock deletes all .lock files (Git crash)"
-		print "--uninstall  unintstalla itself from system dir if exists in same name"
-		print "--install installs into the system"
-		print "--sync-all to sync rom using --force-sync and all dirty commands"
-		print "Licensed under Open GPL 2.0"
+		help()
 z=bootstrap()
 #print "Done!"
