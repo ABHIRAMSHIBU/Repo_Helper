@@ -61,8 +61,17 @@ def select():
 				print 'Fixed lock!'
 				print permission_error
 				c=0
-			if "--sync-all"==sys.argv[i]:
+			if "--sync"==sys.argv[i]:
 				os.system("repo sync -c --force-sync --force-broken --no-tags --no-clone-bundle -f")
+				c=0
+			if "--fuck"==sys.argv[i]:
+				os.system("repo sync -c --force-sync --force-broken --no-tags --no-clone-bundle -f -j 100")
+				c=0
+			if "--sync-slow"==sys.argv[i]:
+				os.system("repo sync -c --force-sync --force-broken --no-tags --no-clone-bundle -f -j 3")
+				c=0
+			if "--sync-vslow"==sys.argv[i]:
+				os.system("repo sync -c --force-sync --force-broken --no-tags --no-clone-bundle -f -j 1")
 				c=0
 	else :
 		print "This program requires a argument, please refer "+name+" -h for details. Argument oder matters."
