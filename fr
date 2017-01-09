@@ -17,7 +17,7 @@ def help():
 	print "--sync to sync rom using --force-sync and all dirty commands, default threads."
 	print "--fuck rapid sync used when refreshing workdir threads 100."
 	print "--sync-slow used to sync slow with 3 threads [ Usefull for slow connections ]."
-	print "--sync-vslow used to sync slow with 1 threads [ Usefull for very slow connections ].
+	print "--sync-vslow used to sync slow with 1 threads [ Usefull for very slow connections ]."
 	print "Licensed under Open GPL 2.0"
 def empty_fix():
 	line='find . -type f -empty -delete'
