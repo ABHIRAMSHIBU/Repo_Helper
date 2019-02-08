@@ -5,7 +5,7 @@ repo_error="Repo is not initialized in this directory. Please check PWD."
 root_error="You does not appear to be root, use sudo or su to be root."
 permission_error="If any permission error occurs, please be root or contact your administrator."
 name="fr"
-bypass_root=False
+bypass_root=True
 def help():
 	print "Fuck REPO!v2"
 	print "Script coded by Abhiram Shibu, contact abhiramshibu1998@abhiramshibu.tk."
@@ -89,7 +89,9 @@ def select():
 	if c==1 :
 		print "Argument Error!. Please reffer "+name+" -h for more details. Argument order matters."
 def bootstrap():
-	if (root_check() or bypass_root) :
+	if (bypass_root) :
+		if (not root_check()):
+			print root_error
 		if null_arg()==0 :
 			for i in range(len(sys.argv)):
 				if i==0:
