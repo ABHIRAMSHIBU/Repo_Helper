@@ -5,11 +5,13 @@ repo_error="Repo is not initialized in this directory. Please check PWD."
 root_error="You does not appear to be root, use sudo or su to be root."
 permission_error="If any permission error occurs, please be root or contact your administrator."
 name="fr"
+bypass_root=False
 def help():
 	print "Fuck REPO!v2"
-	print "Script coded by Abhiram Shibu, contact abhiramshibu1998@gmail.com."
+	print "Script coded by Abhiram Shibu, contact abhiramshibu1998@abhiramshibu.tk."
 	print "Normal usage "+__file__+" --fix-empty --fix-lock --sync-all."
 	print "-h or --help displays this message."
+	print "--bypass-root Bypasses root error"
 	print "--fix-empty  deletes all empty files (Corrupt)."
 	print "--fix-lock deletes all .lock files (Git crash)."
 	print "--uninstall  unintstalla itself from system dir if exists in same name."
@@ -79,13 +81,15 @@ def select():
 			if "--sync-vslow"==sys.argv[i]:
 				os.system("repo sync -c --force-sync --force-broken --no-tags --no-clone-bundle -f -j 1")
 				c=0
+			if "--bypass-root"==sys.argv[i]:
+				bypass_root=True
 	else :
 		print "This program requires a argument, please refer "+name+" -h for details. Argument oder matters."
  		c=0
 	if c==1 :
 		print "Argument Error!. Please reffer "+name+" -h for more details. Argument order matters."
 def bootstrap():
-	if root_check()==1 :
+	if (root_check() or bypass_root) :
 		if null_arg()==0 :
 			for i in range(len(sys.argv)):
 				if i==0:
